@@ -1,0 +1,41 @@
+#! /bin/bash
+
+#SBATCH -N 24
+#SBATCH -p debug
+#SBATCH -t 00:30:00
+#SBATCH -J desi-power
+#SBATCH -C haswell
+#SBATCH -o "/global/homes/y/ybh0822/TomoDelens/Output_cls/slurm-cori-%j.out"
+#SBATCH -e "/global/homes/y/ybh0822/TomoDelens/Output_cls/slurm-cori-%j.out"
+
+module load python
+cd /global/homes/y/ybh0822/packages/CAMB/pycamb
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 0 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 1 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 2 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 3 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 4 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 5 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 6 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 7 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 8 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 9 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 10 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 11 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 12 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 13 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 14 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 15 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 16 6 &
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 1 7 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 1 8 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 1 9 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 1 10 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 1 11 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 1 12 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 1 13 6 &
+
+
+wait

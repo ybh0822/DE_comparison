@@ -1,0 +1,71 @@
+#! /bin/bash
+
+#SBATCH -N 52
+#SBATCH -p debug
+#SBATCH -t 00:30:00
+#SBATCH -J desi-power
+#SBATCH -C haswell
+#SBATCH -o "/global/homes/y/ybh0822/TomoDelens/Output/slurm-cori-%j.out"
+#SBATCH -e "/global/homes/y/ybh0822/TomoDelens/Output/slurm-cori-%j.out"
+
+module load python
+
+cd /global/homes/y/ybh0822/packages/CAMB/pycamb
+
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 0 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 1 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 2 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 3 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 4 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 5 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 6 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 7 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 8 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 9 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 10 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 11 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 12 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 13 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 14 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 15 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 0 16 &
+
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 0 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 1 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 2 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 3 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 4 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 5 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 6 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 7 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 8 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 9 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 10 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 11 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 12 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 13 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 14 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 15 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 1 16 &
+
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 0 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 1 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 2 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 3 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 4 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 5 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 6 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 7 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 8 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 9 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 10 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 11 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 12 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 13 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 14 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 15 &
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 2 16 &
+
+srun -N 1 -n 1 -c 64 python compute_cls_Marcel.py 3 0 &
+
+wait

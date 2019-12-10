@@ -1,0 +1,77 @@
+#! /bin/bash
+
+#SBATCH -N 49
+#SBATCH -p debug
+#SBATCH -t 00:30:00
+#SBATCH -J desi-power
+#SBATCH -C haswell
+#SBATCH -o "/global/homes/y/ybh0822/TomoDelens/Output_cls/slurm-cori-%j.out"
+#SBATCH -e "/global/homes/y/ybh0822/TomoDelens/Output_cls/slurm-cori-%j.out"
+
+module load python
+cd /global/homes/y/ybh0822/packages/CAMB/pycamb
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 0 0 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 0 1 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 0 2 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 0 3 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 0 4 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 0 5 &
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 0 7 &
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 1 0 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 1 1 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 1 2 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 1 3 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 1 4 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 1 5 &
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 1 7 &
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 2 0 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 2 1 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 2 2 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 2 3 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 2 4 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 2 5 &
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 2 7 &
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 3 0 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 3 1 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 3 2 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 3 3 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 3 4 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 3 5 &
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 3 7 &
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 4 0 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 4 1 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 4 2 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 4 3 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 4 4 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 4 5 &
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 4 7 &
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 5 0 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 5 1 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 5 2 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 5 3 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 5 4 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 5 5 &
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 5 7 &
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 6 0 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 6 1 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 6 2 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 6 3 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 6 4 &
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 6 5 &
+
+srun -N 1 -n 1 -c 64 python compute_dclkggg_Marcel.py 2 6 7 &
+
+wait

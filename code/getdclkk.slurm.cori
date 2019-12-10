@@ -1,0 +1,24 @@
+#! /bin/bash
+
+#SBATCH -N 8
+#SBATCH -p debug
+#SBATCH -t 00:30:00
+#SBATCH -J desi-power
+#SBATCH -C haswell
+#SBATCH -o "/global/homes/y/ybh0822/TomoDelens/Output_cls/slurm-cori-%j.out"
+#SBATCH -e "/global/homes/y/ybh0822/TomoDelens/Output_cls/slurm-cori-%j.out"
+
+module load python
+cd /global/homes/y/ybh0822/packages/CAMB/pycamb
+
+srun -N 1 -n 1 -c 64 python compute_dclkk_Marcel.py 0 &
+srun -N 1 -n 1 -c 64 python compute_dclkk_Marcel.py 1 &
+srun -N 1 -n 1 -c 64 python compute_dclkk_Marcel.py 2 &
+srun -N 1 -n 1 -c 64 python compute_dclkk_Marcel.py 3 &
+srun -N 1 -n 1 -c 64 python compute_dclkk_Marcel.py 4 &
+srun -N 1 -n 1 -c 64 python compute_dclkk_Marcel.py 5 &
+srun -N 1 -n 1 -c 64 python compute_dclkk_Marcel.py 6 &
+srun -N 1 -n 1 -c 64 python compute_dclkk_Marcel.py 7 &
+srun -N 1 -n 1 -c 64 python compute_dclkk_Marcel.py 8 &
+
+wait
