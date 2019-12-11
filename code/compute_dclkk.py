@@ -236,9 +236,9 @@ def Cl_kk(theta, acc_npts):
     #For Limber result, want integration over \chi (comoving radial distance), from 0 to chi_*.
     #so get background results to find chistar, set up arrage in chi, and calculate corresponding redshifts
     results= camb.get_background(pars)
-    chistar = results.conformal_time(0)- model.tau_maxvis.value
+    chistar = results.conformal_time(0)- results.tau_maxvis
     chis = np.linspace(0,chistar,nz)
-    zs=results.redshift_at_comoving_radial_distance(chis, nz_step=30000, zmax=10000)
+    zs=results.redshift_at_comoving_radial_distance(chis)
     #Calculate array of delta_chi, and drop first and last points where things go singular
     dchis = (chis[2:]-chis[:-2])/2
     dzs = (zs[2:]-zs[:-2])/2
